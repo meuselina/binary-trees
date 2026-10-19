@@ -1,27 +1,27 @@
 /**
- * Ein einfacher Binaerbaum mit ganzzahligen Werten.
+ * A simple binary tree holding integer values.
  *
- * Jeder Knoten speichert einen Wert (item) und hat hoechstens
- * einen linken und einen rechten Teilbaum.
+ * Each node stores a value (item) and has at most
+ * one left and one right subtree.
  */
-public class BinTree {
+public class BinaryTree {
 
     private Integer item;
-    private BinTree left;
-    private BinTree right;
+    private BinaryTree left;
+    private BinaryTree right;
 
-    /** Leerer Baum ohne Wert. */
-    public BinTree() {
+    /** Empty tree without a value. */
+    public BinaryTree() {
         this.item = null;
     }
 
-    /** Baum mit genau einem Knoten. */
-    public BinTree(int item) {
+    /** Tree with exactly one node. */
+    public BinaryTree(int item) {
         this.item = item;
     }
 
-    /** Baum mit Wert und zwei Teilbaeumen (die auch null sein duerfen). */
-    public BinTree(int item, BinTree left, BinTree right) {
+    /** Tree with a value and two subtrees (both may be null). */
+    public BinaryTree(int item, BinaryTree left, BinaryTree right) {
         this.item = item;
         this.left = left;
         this.right = right;
@@ -33,7 +33,7 @@ public class BinTree {
 
     public int getItem() {
         if (item == null) {
-            throw new IllegalStateException("Der Baum ist leer.");
+            throw new IllegalStateException("The tree is empty.");
         }
         return item;
     }
@@ -50,19 +50,19 @@ public class BinTree {
         return right != null && right.hasItem();
     }
 
-    public BinTree getLeft() {
+    public BinaryTree getLeft() {
         return left;
     }
 
-    public BinTree getRight() {
+    public BinaryTree getRight() {
         return right;
     }
 
-    public void setLeft(BinTree left) {
+    public void setLeft(BinaryTree left) {
         this.left = left;
     }
 
-    public void setRight(BinTree right) {
+    public void setRight(BinaryTree right) {
         this.right = right;
     }
 }
