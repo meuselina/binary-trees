@@ -1,6 +1,17 @@
+<div align="center">
+
 # Binary Trees
 
 Classic binary tree algorithms in Java, written recursively.
+
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Tests](https://img.shields.io/badge/tests-19%20passing-22c55e?style=for-the-badge)
+![No dependencies](https://img.shields.io/badge/dependencies-none-8b5cf6?style=for-the-badge)
+![License](https://img.shields.io/badge/license-MIT-0ea5e9?style=for-the-badge)
+
+<img src="media/demo.gif" width="720" alt="Running the demo and the tests in the terminal" />
+
+</div>
 
 ## What's inside
 
@@ -15,22 +26,20 @@ Classic binary tree algorithms in Java, written recursively.
 | `search` | Searches for a value in a binary search tree |
 | `insert` | Inserts a value into a binary search tree |
 
-## Files
+## Quick start
 
-| File | Purpose |
-|---|---|
-| `BinaryTreeAlgorithms.java` | The algorithms |
-| `BinaryTree.java` | The binary tree data structure |
-| `Main.java` | Demo that builds a search tree and runs every algorithm |
-| `BinaryTreeAlgorithmsTest.java` | 19 automated tests, including edge cases (empty tree, single node, duplicates) |
-
-## Run
+You only need a JDK (tested with Java 21). No build tool, no external libraries.
 
 ```bash
+git clone https://github.com/meuselina/binary-trees.git
+cd binary-trees
+
 javac *.java
 java Main                       # demo
-java BinaryTreeAlgorithmsTest   # tests
+java BinaryTreeAlgorithmsTest   # 19 tests
 ```
+
+## Example output
 
 ```
 Inserted: 50 30 70 20 40 60 80
@@ -57,6 +66,24 @@ Full:           false
 Perfect:        false
 ```
 
+```
+$ java BinaryTreeAlgorithmsTest
+19 tests passed, 0 failed.
+```
+
+## Files
+
+| File | Purpose |
+|---|---|
+| `BinaryTreeAlgorithms.java` | The algorithms |
+| `BinaryTree.java` | The binary tree data structure |
+| `Main.java` | Demo that builds a search tree and runs every algorithm |
+| `BinaryTreeAlgorithmsTest.java` | 19 automated tests, including edge cases (empty tree, single node, duplicates) |
+
 ## Built with
 
-Java
+Java, standard library only.
+
+## License
+
+[MIT](LICENSE) © 2026 Selina Meusel
