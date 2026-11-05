@@ -140,4 +140,50 @@ public class BinaryTreeAlgorithms {
         }
         return tree;
     }
+
+    // Deletes a value from a binary search tree and returns the new root.
+    // Three cases: a leaf is simply removed, a node with one child is
+    // replaced by that child, and a node with two children takes the
+    // smallest value of its right subtree (its inorder successor), which is
+    // then deleted from there. If the value is not in the tree, nothing
+    // changes. Deleting the last value returns null (empty tree).
+    public static BinaryTree delete(BinaryTree tree, int value) {
+        if (tree == null || !tree.hasItem()) {
+            return tree;
+        }
+        if (value < tree.getItem()) {
+            if (tree.hasLeft()) {
+                tree.setLeft(delete(tree.getLeft(), value));
+            }
+            return tree;
+        }
+        if (value > tree.getItem()) {
+            if (tree.hasRight()) {
+                tree.setRight(delete(tree.getRight(), value));
+            }
+            return tree;
+        }
+        // Found the node to delete
+        if (!tree.hasLeft()) {
+            return tree.hasRight() ? tree.getRight() : null;
+        }
+        if (!tree.hasRight()) {
+            return tree.getLeft();
+        }
+        int successor = min(tree.getRight());
+        tree.setItem(successor);
+        tree.setRight(delete(tree.getRight(), successor));
+        return tree;
+    }
+
+    // Smallest value in a binary search tree: the leftmost node.
+    public static int min(BinaryTree tree) {
+        if (tree == null || !tree.hasItem()) {
+            throw new IllegalArgumentException("The tree is empty.");
+        }
+        while (tree.hasLeft()) {
+            tree = tree.getLeft();
+        }
+        return tree.getItem();
+    }
 }
