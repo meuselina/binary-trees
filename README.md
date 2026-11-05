@@ -6,7 +6,7 @@ Classic binary tree algorithms in Java, written recursively.
 
 ![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 [![Build and test](https://github.com/meuselina/binary-trees/actions/workflows/build.yml/badge.svg)](https://github.com/meuselina/binary-trees/actions/workflows/build.yml)
-![Tests](https://img.shields.io/badge/tests-19%20passing-22c55e?style=for-the-badge)
+![Tests](https://img.shields.io/badge/tests-27%20passing-22c55e?style=for-the-badge)
 ![No dependencies](https://img.shields.io/badge/dependencies-none-8b5cf6?style=for-the-badge)
 ![License](https://img.shields.io/badge/license-MIT-0ea5e9?style=for-the-badge)
 
@@ -26,6 +26,8 @@ Classic binary tree algorithms in Java, written recursively.
 | `height` | Height of the tree |
 | `search` | Searches for a value in a binary search tree |
 | `insert` | Inserts a value into a binary search tree |
+| `delete` | Deletes a value from a binary search tree (leaf, one child, or two children via the inorder successor) |
+| `min` | Smallest value in a binary search tree |
 
 ## Quick start
 
@@ -37,7 +39,7 @@ cd binary-trees
 
 javac *.java
 java Main                       # demo
-java BinaryTreeAlgorithmsTest   # 19 tests
+java BinaryTreeAlgorithmsTest   # 27 tests
 ```
 
 ## Example output
@@ -65,11 +67,15 @@ After inserting 65:
 Height:         3
 Full:           false
 Perfect:        false
+
+After deleting 50 (the root):
+Root:           60
+Inorder:   20 30 40 60 65 70 80
 ```
 
 ```
 $ java BinaryTreeAlgorithmsTest
-19 tests passed, 0 failed.
+27 tests passed, 0 failed.
 ```
 
 ## Files
@@ -79,7 +85,7 @@ $ java BinaryTreeAlgorithmsTest
 | `BinaryTreeAlgorithms.java` | The algorithms |
 | `BinaryTree.java` | The binary tree data structure |
 | `Main.java` | Demo that builds a search tree and runs every algorithm |
-| `BinaryTreeAlgorithmsTest.java` | 19 automated tests, including edge cases (empty tree, single node, duplicates) |
+| `BinaryTreeAlgorithmsTest.java` | 27 automated tests, including edge cases (empty tree, single node, duplicates, deleting the root or the last value) |
 
 ## Built with
 
