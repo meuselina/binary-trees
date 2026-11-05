@@ -64,6 +64,21 @@ public class BinaryTreeAlgorithmsTest {
         BinaryTree duplicates = build(5, 3, 5, 3);
         check("no duplicates", " 3 5", BinaryTreeAlgorithms.inorder(duplicates));
 
+        // Delete: leaf, one child, two children, root, missing value, last value
+        check("delete leaf", " 30 40 50 60 70 80",
+                BinaryTreeAlgorithms.inorder(BinaryTreeAlgorithms.delete(build(50, 30, 70, 20, 40, 60, 80), 20)));
+        check("delete node with one child", " 50 60",
+                BinaryTreeAlgorithms.inorder(BinaryTreeAlgorithms.delete(build(50, 70, 60), 70)));
+        check("delete node with two children", " 20 30 40 50 60 80",
+                BinaryTreeAlgorithms.inorder(BinaryTreeAlgorithms.delete(build(50, 30, 70, 20, 40, 60, 80), 70)));
+        BinaryTree withoutRoot = BinaryTreeAlgorithms.delete(build(50, 30, 70, 20, 40, 60, 80), 50);
+        check("delete root: successor moves up", 60, withoutRoot.getItem());
+        check("delete root: still sorted", " 20 30 40 60 70 80", BinaryTreeAlgorithms.inorder(withoutRoot));
+        check("delete missing value", " 20 30 40 50 60 70 80",
+                BinaryTreeAlgorithms.inorder(BinaryTreeAlgorithms.delete(build(50, 30, 70, 20, 40, 60, 80), 65)));
+        check("delete last value", true, BinaryTreeAlgorithms.delete(new BinaryTree(7), 7) == null);
+        check("min of search tree", 20, BinaryTreeAlgorithms.min(build(50, 30, 70, 20, 40, 60, 80)));
+
         System.out.println(passed + " tests passed, " + failed + " failed.");
         if (failed > 0) {
             System.exit(1);

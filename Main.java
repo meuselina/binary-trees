@@ -39,5 +39,11 @@ public class Main {
         System.out.println("Height:         " + BinaryTreeAlgorithms.height(tree));
         System.out.println("Full:           " + BinaryTreeAlgorithms.isFull(tree));
         System.out.println("Perfect:        " + BinaryTreeAlgorithms.isPerfect(tree));
+
+        tree = BinaryTreeAlgorithms.delete(tree, 50);
+        System.out.println();
+        System.out.println("After deleting 50 (the root):");
+        System.out.println("Root:           " + tree.getItem());
+        System.out.println("Inorder:  " + BinaryTreeAlgorithms.inorder(tree));
     }
 }
