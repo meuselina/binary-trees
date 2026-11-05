@@ -23,5 +23,5 @@ jobs:
       - name: Run the demo
         run: java Main
 
-      - name: Run the 19 tests
+      - name: Run the tests
         run: java BinaryTreeAlgorithmsTest
